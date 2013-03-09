@@ -6,12 +6,12 @@ public class process {
 
     private int ptime;
     private String pname;
-    private double cputime;
-    process(int ptime,String pname,double cputime)
+    private double cpuburst;
+    process(int ptime,String pname,double cpuburst)
     {
         this.pname=pname;
         this.ptime=ptime;
-        this.cputime=cputime;
+        this.cpuburst=cpuburst;
     }
     String getname()
     {
@@ -20,5 +20,9 @@ public class process {
     int gettime()
     {
         return ptime;
+    }
+    double getcpuburst()
+    {
+        return cpuburst;
     }
 }
