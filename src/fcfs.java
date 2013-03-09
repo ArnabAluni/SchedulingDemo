@@ -30,24 +30,22 @@ List<process> list;
         while(it.hasNext())
         {
             process p=it.next();
-            System.out.println(p.getname()+"\t"+p.gettime()+"\t\t"+p.getcpuburst());
-            //System.out.println("Process Arrival Time:"+p.gettime());
+            System.out.format("%s\t %d\t\t %.1f\n",p.getname(),+p.gettime(),p.getcpuburst());
         }
     }
     void sortProcesses()
     {
         Collections.sort(list,new processComparator());
-        //showProcesses();
+        
     }
     
     void start()
     {
         System.out.println("Welcome to Scheduling Demo!");
-        
-        addProcess(1,"p1",12.0);
-        addProcess(2,"p2",3.0);
-        addProcess(2,"p3",4.0);
-        addProcess(3,"p4",2.0);
+        for(int i=0;i<10;i++)
+        {
+            addProcess((int)((Math.random()*100)%10),("p"+i),(int)((Math.random()*100)%30));
+        }
         
     }
     void schedule()
